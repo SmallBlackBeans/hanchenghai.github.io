@@ -15,11 +15,11 @@
     
     
     
-    <link rel="icon" href="/img/favicon.ico">
+    <link rel="icon" href="//img/favicon.ico">
     
     
-    <link rel="apple-touch-icon" href="/img/pacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon" href="//img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="//img/pacman.jpg">
     
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -29,7 +29,7 @@
       <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/logo.svg" alt="韩小醋的开发之路" title="韩小醋的开发之路"/></a>
+				<a href="/"><img src="//img/logo.svg" alt="韩小醋的开发之路" title="韩小醋的开发之路"/></a>
 			</div>
 			
 			<div id="textlogo">
@@ -111,6 +111,10 @@
 	</article>
 	
 	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
 </div>  
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
@@ -145,6 +149,8 @@
 	<div class="social-font clearfix">
 		
 		
+		
+		<a href="https://github.com/https://github.com/guaiguaihan" target="_blank" title="github"></a>
 		
 		
 		
@@ -266,7 +272,40 @@ $(document).ready(function(){
 </script>
 
 
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"hanxiaocu"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
 
 
 
